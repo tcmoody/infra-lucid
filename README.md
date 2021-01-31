@@ -16,3 +16,8 @@ We can output it as part of the terraform if A records are ok, otherwise purchas
 
 What aspects need to be considered to make the code work in a CD pipeline (how does it successfully and safely get into production)?
 Service account for execution within the pipeline. Secrets injection if not using aws secrets storage. Probably more, just spitballing right now.
+
+Things I added to the existing networking module:
+- another round of private subnets for the postgres RDS stuff
+- assuming using above terraform 0.12 so that the data lookup against resource creation resolves for db password generation and storage in AWS secrets storage
+- did my best to sort by modules, should hopefully make stuff findable
